@@ -25,5 +25,6 @@ func main() {
 		age: 3}
 	saySomething(&p1)
 	saySomething(&p2)
+	p1.speak()
 
 }
