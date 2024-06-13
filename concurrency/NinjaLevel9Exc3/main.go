@@ -33,10 +33,12 @@ func main() {
 			v++
 			count = v
 			runtime.Gosched()
+			fmt.Println("Number of GoRoutine", runtime.NumGoroutine())
 			wg.Done()
 		}()
-		fmt.Println("Number of GoRoutine", runtime.NumGoroutine())
+
 		fmt.Println("Count value", count)
 	}
+
 	wg.Wait()
 }
