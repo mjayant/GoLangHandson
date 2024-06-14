@@ -42,7 +42,7 @@ func main() {
 	fmt.Println("area of squre is,", info(s1))
 	fmt.Println("area of circle is,", info(c1))
 
-	// Example for , return value with mentioning in return statement , funtion at 135
+	// Example for , return value without mentioning value in return statement , funtion at 135
 	a1 := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
 	fmt.Println("result from foo", sum(a1))
 
