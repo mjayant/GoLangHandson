@@ -60,6 +60,17 @@ func main() {
 		Age: 35}
 	p1.speak()
 
+	// Example for anonymous function , without calling inline
+	x := func() {
+		fmt.Println("Anonymous func ran")
+	}
+
+	y := func(s string) {
+		fmt.Println("This is an anonymous func showing my name", s)
+	}
+
+	x()
+	y("Todd")
 	// func foo() int {
 	// 	return 07
 	// }
