@@ -96,17 +96,7 @@ func main() {
 
 	fmt.Println(b)
 	fmt.Println(n)
-	// func foo() int {
-	// 	return 07
-	// }
 
-	// x()
-	// y := func() {
-	// 	for i := 0; i < 10; i++ {
-	// 		fmt.Println(i)
-	// 	}
-	// }
-	// y()
 	// x := outer()
 	// fmt.Println(x())
 	// fmt.Println(printSqure(square, 5))
