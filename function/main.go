@@ -97,18 +97,23 @@ func main() {
 	fmt.Println(b)
 	fmt.Println(n)
 
-	// x := outer()
-	// fmt.Println(x())
-	// fmt.Println(printSqure(square, 5))
-	// x := closureExample(2)
-	// fmt.Println(x())
-	// fmt.Println(x())
-	// fmt.Println(x())
-	// fmt.Println(x())
-	// fmt.Println(x())
-	// fmt.Println(x())
-	// fmt.Println(x())
-	// wrapperExample(sqre, 5)
+	// Example of function which return function
+	x1 := outer()
+	fmt.Println(x1())
+
+	// Example of function which take another function as param
+	fmt.Println(printSqure(Getsquare, 5))
+	// Function Clouser example
+	x2 := closureExample(2)
+	fmt.Println(x2())
+	fmt.Println(x2())
+	fmt.Println(x2())
+	fmt.Println(x2())
+	fmt.Println(x2())
+	fmt.Println(x2())
+	fmt.Println(x2())
+
+	wrapperExample(Getsquare, 5)
 	// var x *int
 	// a1 := 5
 	// x = &a1
@@ -207,35 +212,36 @@ type Person struct {
 // 	}
 // }
 
-// func outer() func() int {
-// 	return func() int {
-// 		return 45
-// 	}
-// }
+func outer() func() int {
+	return func() int {
+		return 45
+	}
+}
 
-// func square(n int) int {
-// 	return n * n
-// }
+func Getsquare(n int) int {
+	return n * n
+}
 
-// func printSqure(f func(n int) int, a int) string {
-// 	return fmt.Sprintf("squre is %v", f(a))
-// }
+func printSqure(f func(n int) int, a int) string {
+	return fmt.Sprintf("squre is %v", f(a))
+}
 
-// func closureExample(val float64) func() float64 {
-// 	var c float64
-// 	return func() float64 {
-// 		c++
-// 		return math.Pow(val, c)
-// 	}
+func closureExample(val float64) func() float64 {
+	var c float64
+	return func() float64 {
+		c++
+		return math.Pow(val, c)
+	}
+}
 
 // }
 // func sqre(n int) int {
 // 	return n * n
 // }
 
-// func wrapperExample(f func(n int) int, a int) {
-// 	fmt.Println(" Before function")
-// 	ret_value := f(a)
-// 	fmt.Println("function return value", ret_value)
-// 	fmt.Println("After calling function")
-// }
+func wrapperExample(f func(n int) int, a int) {
+	fmt.Println(" Before function")
+	ret_value := f(a)
+	fmt.Println("function return value", ret_value)
+	fmt.Println("After calling function")
+}
