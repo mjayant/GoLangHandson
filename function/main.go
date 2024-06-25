@@ -114,21 +114,22 @@ func main() {
 	fmt.Println(x2())
 
 	wrapperExample(Getsquare, 5)
-	// var x *int
-	// a1 := 5
-	// x = &a1
-	// fmt.Printf("value of x is %v \t and type %T \t and vaue stored at address is %v \n", x, x, *x)
-	// var y *string
-	// a2 := "jayant"
-	// y = &a2
-	// fmt.Printf("Value of y is %v \t and type is %T \t and value stored at adress is %v\n", y, y, *y)
-	// p1 := person_details{name: "jayant",
-	// 	age: 34}
-	// p1.walk()
-	// p1.run()
-	// p1 = changeName(&p1, "Mishra")
-	// p1.walk()
-	// p1.run()
+
+	var x3 *int
+	a11 := 5
+	x3 = &a11
+	fmt.Printf("value of x is %v \t and type %T \t and vaue stored at address is %v \n", x3, x3, *x3)
+	var y1 *string
+	a21 := "jayant"
+	y1 = &a21
+	fmt.Printf("Value of y is %v \t and type is %T \t and value stored at adress is %v\n", y1, y1, *y1)
+	p11 := person_details{name: "jayant",
+		age: 34}
+	p11.walk()
+	p11.run()
+	p11 = changeName(&p11, "Mishra")
+	p11.walk()
+	p11.run()
 
 	// Example for unmarshalling JSON
 	jsonData := `{"name":"Alice","age":30}`
@@ -177,25 +178,25 @@ type Person struct {
 	Age  int    `json:"age"`
 }
 
-// type person interface {
-// 	walk()
-// 	run()
-// }
-// type person_details struct {
-// 	name string
-// 	age  int
-// }
+//	type person interface {
+//		walk()
+//		run()
+//	}
+type person_details struct {
+	name string
+	age  int
+}
 
-// func (p person_details) walk() {
-// 	fmt.Printf("%v name walk \n", p.name)
-// }
-// func (p person_details) run() {
-// 	fmt.Printf("%v name run \n", p.name)
-// }
-// func changeName(p1 *person_details, s string) person_details {
-// 	p1.name = s
-// 	return *p1
-// }
+func (p person_details) walk() {
+	fmt.Printf("%v name walk \n", p.name)
+}
+func (p person_details) run() {
+	fmt.Printf("%v name run \n", p.name)
+}
+func changeName(p1 *person_details, s string) person_details {
+	p1.name = s
+	return *p1
+}
 
 // func test(a *int) {
 // 	fmt.Println("Inside function")
